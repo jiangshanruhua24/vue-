@@ -1,7 +1,7 @@
 <template>
-    <div class="home">
-        home
-    </div>
+  <div class="broadcast">
+      broadcast</div>
+            
 </template>
 
 <script>
