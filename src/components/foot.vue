@@ -53,6 +53,7 @@ export default {
         border-top: .01rem solid #ccc;
         width: 100%;
         font-size: 0;
+        background-color: #fff;
         div {
             flex-grow: 1;
             display: flex;

@@ -1,22 +1,23 @@
 <template>
   <div id="app">
     <div id="nav">
-        <home></home>
-        <foot></foot>
+      <router-view></router-view>
+      
+      <foot></foot>
     </div>
    
   </div>
 </template>
 <script>
-import './assets/css/common.css';
-import foot from './components/foot'
-import home from './views/Home'
+import 'assets/css/common.css';
+import foot from 'components/foot'
+
 export default{
   components:{
-    foot,home
+    foot
   }
 }
 </script>
-<style lang="less">
+<style scoped lang="less">
 
 </style>

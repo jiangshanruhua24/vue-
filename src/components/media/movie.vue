@@ -1,0 +1,15 @@
+<template>
+  <div class="movie">
+      movie
+  </div>
+</template>
+
+<script>
+export default {
+    name:'movie'
+}
+</script>
+
+<style>
+
+</style>

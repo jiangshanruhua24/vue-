@@ -1,0 +1,23 @@
+module.exports={
+    configureWebpack:{
+        resolve:{
+            alias:{
+                views:'@/views',
+                components:'@/components',
+                assets:'@/assets',
+                request:'@/request',
+            }
+        }
+    },
+    devServer:{
+        proxy:{
+            '/api':{
+                target:'http://localhost:20000',
+                changeOrigin:true,
+                pathRewrite:{
+                    "^api":''
+                }
+            }
+        }
+    }
+}
