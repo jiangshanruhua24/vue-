@@ -8,8 +8,12 @@
 </template>
 
 <script>
+
 export default {
     name:'carousel',
+    mounted(){
+       
+    },
     data(){
         return {
             swiperOptions:{
@@ -35,7 +39,6 @@ export default {
             default:'cube'
         }
     }
-    
 }
 </script>
 

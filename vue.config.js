@@ -10,14 +10,11 @@ module.exports={
         }
     },
     devServer:{
-        proxy:{
-            '/api':{
-                target:'http://localhost:20000',
-                changeOrigin:true,
-                pathRewrite:{
-                    "^api":''
-                }
+        proxy: {
+            "/api": {
+              target: "http://192.168.1.45:3000",
+              pathRewrite: {"^/api" : ""}
             }
-        }
+          }
     }
 }

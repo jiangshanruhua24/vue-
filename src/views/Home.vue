@@ -8,49 +8,63 @@
         </div>
         <img src="./../components/img/home/ic_chat_white.png" slot="right" class="img-icon right">
     </Head>
-    <Carousel :autotime='1500' :effect="cube">
-        <swiper-slide slot="img">
-           <img src="./../components/img/home/01.jpg" alt="">
+    <!-- <Carousel :autotime='time' effect="cube">
+        <template slot="img">
+        <swiper-slide v-for="item in imgarr" :key="item" >
+            <img :src="item" alt="">
         </swiper-slide>
-        <swiper-slide slot="img">
-           <img src="./../components/img/home/02.jpg" alt="">
+
+        </template>
+    </Carousel> -->
+    <Carousel :autotime='time' effect="cube">
+        <template slot="img">
+        <swiper-slide v-for="item in arr2" :key="item" >
+            <img :src="item" alt="">
         </swiper-slide>
-        <swiper-slide slot="img">
-           <img src="./../components/img/home/03.jpg" alt="">
-        </swiper-slide>
-    </Carousel>     
+
+        </template>
+    </Carousel>
+    <homelist v-for="item in list" :key="item.id" :title="item.title" :url='item.target.cover_url'
+    :desc='item.target.desc' :author='item.target.author.name'>
+
+    </homelist>
     </div>
 </template>
 
 <script>
 import Head from './../components/head'
 import Carousel from 'components/carousel'
-//import {f_carousel,f_homelist} from 'request/home'
+import homelist from 'components/home/homelist'
+import {carousel,homelist as home} from './../request/request'
 export default {
     name:'Home',
-    components:{
-        Head,Carousel
-    },
     data(){
-        return {
-            cube:'cube'
-
+        return{
+            time:1500,
+            arr2:[],
+            list:[],
         }
     },
+    components:{
+        Head,Carousel,homelist
+    },
     mounted(){
-        // f_carousel().then(res=>{
-        //     console.log(res);
-        // }),
-        // f_homelist().then(res=>{
-        //     console.log(res);
-        // })
+        carousel().then(res=>{
+            //console.log(res);
+            //this.imgarr=res.list1;
+            this.arr2=res.list;
+        })
+        home().then(res=>{
+            console.log(res);
+            this.list=res.recommend_feeds;
+        })
     }
 }
 </script>
 
 <style scoped lang='less'>
     .home{
-        
+        overflow-y: auto;
         .head{
             background-color: #48bd5a;
             overflow: hidden;
@@ -69,7 +83,6 @@ export default {
         .ipt{
             flex: 1;
             height: .3rem;
-            
             border: none;
             font-size: .12rem;
             color: #a7a6a6;

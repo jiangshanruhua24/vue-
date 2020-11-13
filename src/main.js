@@ -8,6 +8,11 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/swiper-bundle.css'
 //import req from './request/index'
 Vue.use(VueAwesomeSwiper)
+
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 
 new Vue({

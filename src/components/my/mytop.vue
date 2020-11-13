@@ -1,8 +1,12 @@
 <template>
   <div class="top">
     <div>
-      <img src="./../img/my/ic_settings.png" alt="">
+      <img src="./../img/my/图片3_03.png" alt="">
       <span>密码管理</span>
+    </div>
+     <div>
+      <img src="./../img/my/图片3_06.png" alt="">
+      <span>银行卡管理</span>
     </div>
   </div>
 </template>
@@ -11,7 +15,9 @@
 export default {
     name:'mytop',
     data(){
-
+      return{
+        
+      }
     },
     props:{
       font:{
@@ -24,8 +30,24 @@ export default {
 
 <style scoped lang='less'>
   .top{
-    width: 50%;
-    height: .86rem;
-    border-bottom: solid .01rem #ccc;
+    width: 100%;
+    height: .81rem;
+    border-bottom: solid 1px #ccc;
+    font-size: .14rem;
+    display: flex;
+    align-items: center;
+    div{
+      flex: 1;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: .54rem;
+
+      img{
+        width: .24rem;
+      };
+    }
   }
 </style>

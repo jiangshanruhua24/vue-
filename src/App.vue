@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav">
+    
       <router-view></router-view>
       
       <foot></foot>
-    </div>
+   
    
   </div>
 </template>
@@ -18,6 +18,10 @@ export default{
   }
 }
 </script>
-<style scoped lang="less">
-
+<style  lang="less">
+body{overflow:hidden;}
+ #app{
+   height: 100%;
+   overflow-y: auto;
+ }
 </style>

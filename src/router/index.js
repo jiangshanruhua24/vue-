@@ -11,8 +11,8 @@ const routes = [
   },
   {
     path:'/',
-    component:()=> import('views/Home.vue'),
-    redirect:'home'
+    component: ()=> import ('views/Login') ,
+    redirect:'login'
   },
   {
     path:'/my',
@@ -59,7 +59,18 @@ const routes = [
     path:'/broadcast',
     name:'Broadcast',
     component: ()=> import ('views/Broadcast') 
-  }
+  },
+  {
+    path:'/login',
+    name:'login',
+    component: ()=> import ('views/Login') 
+  },
+  
+  {
+    path:'/reg',
+    name:'reg',
+    component: ()=> import ('views/Register') 
+  },
  
 ]
 
